@@ -27,11 +27,7 @@ class Method
   end
 
   def to_proc
-    %x{
-      var proc = function () { return self.$call.apply(self, $slice.call(arguments)); };
-      proc.$$unbound = #@method;
-      return proc;
-    }
+    @method
   end
 
   def inspect
